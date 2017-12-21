@@ -1,0 +1,15 @@
+for channelname in name:
+
+...  shutil.copyfile("app-debug.zip","app"+channelname+'.zip’)
+
+#l channel name
+
+...  newName = 'app'+channelname+'.zip’ 
+
+...  zipped = zipfile.ZipFile(newName, 'a', zipfile.ZIP_DEFLATED) 
+
+...  empty_channel_file = "META-INF/mtchannel_{channel}".format(channel=newName)
+
+...  zipped.write(‘your empty file"',empty_channel_file)
+
+...  zipped.close()
